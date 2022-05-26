@@ -1,6 +1,6 @@
 # Overview
 
-This repository contains the codes used for the snRNA-Seq analysis in following publication: Molecular and Cellular Recovery After Prolonged Warm Ischemia of the Whole Body
+This repository contains the codes used for the snRNA-Seq analysis in following publication: Cellular Recovery After Prolonged Warm Ischemia of the Whole Body
 
 DOI:
 
