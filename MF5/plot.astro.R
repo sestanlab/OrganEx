@@ -1,3 +1,6 @@
+
+source("~/Documents/Scripts/hyper.fun.R")
+
 # read in data
 data_list <- list(hipo = readRDS(paste0(data, 'hipo.sampled.rds')) %>% 
                     subset(., group %in% "Astro"))
