@@ -12,15 +12,4 @@ markers_list.top10 <- lapply(markers_list, function(x) {
 
 pdf('heatmaps/Hipo.hres.Heatmap.pdf', height = 15, width = 15)
 DoHeatmap(data_list$hipo.hres, group.by = 'cluster', slot = "scale.data", features = markers_list.top10$hipo.mar$gene)
-
-pdf('heatmaps/Liver.hres.Heatmap.pdf', height = 15, width = 15)
-DoHeatmap(data_list$liver.hres, group.by = 'cluster', slot = "scale.data", features = markers_list.top10$liver.mar$gene)
-dev.off()
-
-pdf('heatmaps/Kidney.hres.Heatmap.pdf', height = 15, width = 15)
-DoHeatmap(data_list$kidney.hres, group.by = 'cluster', slot = "scale.data", features = markers_list.top10$kidney.mar$gene)
-dev.off()
-
-pdf('heatmaps/Heart.hres.Heatmap.pdf', height = 15, width = 15)
-DoHeatmap(data_list$heart.hres, group.by = 'cluster', slot = "scale.data", features = markers_list.top10$heart.mar$gene) 
 dev.off()
