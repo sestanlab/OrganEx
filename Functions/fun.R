@@ -1,3 +1,6 @@
+
+# hyper.fun.R
+
 hp_test <- function(all_genes, marker_list, test_genes){
   total_white <- length(test_genes)
   total_black <- length(all_genes) - total_white
