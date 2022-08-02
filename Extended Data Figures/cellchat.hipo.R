@@ -1,20 +1,3 @@
-# hipo
-hipo <- readRDS(paste0(inputdir,'OE.HIP.all.seurat.filter.final.rds'))
-hipo@meta.data$cdt_gp <- paste0(as.character(hipo@meta.data$condition), "_", as.character(hipo@meta.data$group))
-hipo.list <- SplitObject(hipo, split.by = "cdt_gp")
-
-set.seed(0)
-hipo.list.sampled <- lapply(X = hipo.list, N = 1000, FUN = function(x, N) {
-  if(ncol(x) > N){
-    x <- x[,sample(ncol(x), N, replace = FALSE)] 
-  } else {
-    x
-  }
-  return(x)
-})
-
-hipo.sampled <- Reduce(merge,hipo.list.sampled)
-saveRDS(hipo.sampled, "hipo.sampled.rds")
 
 hipo <- readRDS(paste0(inputdir, 'hipo.sampled.rds'))
 hipo.list <- list(h0= createCellChat(object = subset(hipo, subset = condition == "h0"), group.by = "group"),

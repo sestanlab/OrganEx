@@ -1,20 +1,3 @@
-# liver
-liver <- readRDS(paste0(inputdir,'OE.liver.all.seurat.filter.final.rds'))
-liver@meta.data$cdt_gp <- paste0(as.character(liver@meta.data$condition), "_", as.character(liver@meta.data$group))
-liver.list <- SplitObject(liver, split.by = "cdt_gp")
-
-set.seed(0)
-liver.list.sampled <- lapply(X = liver.list, N = 1000, FUN = function(x, N) {
-  if(ncol(x) > N){
-    x <- x[,sample(ncol(x), N, replace = FALSE)] 
-  } else {
-    x
-  }
-  return(x)
-})
-
-liver.sampled <- Reduce(merge,liver.list.sampled)
-saveRDS(liver.sampled, "liver.sampled.rds")
 
 liver <- readRDS(paste0(inputdir, 'liver.sampled.rds'))
 liver.list <- list(h0= createCellChat(object = subset(liver, subset = condition == "h0"), group.by = "group"),

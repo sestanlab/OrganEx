@@ -1,20 +1,3 @@
-# heart
-heart <- readRDS(paste0(inputdir,'OE.heart.all.seurat.filter.final.rds'))
-heart@meta.data$cdt_gp <- paste0(as.character(heart@meta.data$condition), "_", as.character(heart@meta.data$group))
-heart.list <- SplitObject(heart, split.by = "cdt_gp")
-
-set.seed(0)
-heart.list.sampled <- lapply(X = heart.list, N = 1000, FUN = function(x, N) {
-  if(ncol(x) > N){
-    x <- x[,sample(ncol(x), N, replace = FALSE)] 
-  } else {
-    x
-  }
-  return(x)
-})
-
-heart.sampled <- Reduce(merge,heart.list.sampled)
-saveRDS(heart.sampled, "heart.sampled.rds")
 
 heart <- readRDS(paste0(inputdir, 'heart.sampled.rds'))
 heart.list <- list(h0= createCellChat(object = subset(heart, subset = condition == "h0"), group.by = "group"),
