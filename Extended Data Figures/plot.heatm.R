@@ -1,7 +1,7 @@
 ## Calculate the marker res
 if (TRUE){
   data_list = data_list
-  
+
   for (ii in names(data_list)){
     seu <- data_list[[ii]]
     all_cls  <- levels(as.factor(seu@meta.data$cluster))
