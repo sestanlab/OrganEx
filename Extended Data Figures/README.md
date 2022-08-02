@@ -1,5 +1,5 @@
 
-### Visualize sample size and data quality
+## Visualize sample size and data quality
 plot.quality.R \
 
 
@@ -16,6 +16,10 @@ hip_calc.augur.v2.R \
 
 - Visualization \
 hip_plot.augur.v2.R \
+
+#### Monocle pseudotime analysis
+The following script is also applicable to other organs: \
+pseudotimeLiver_monocleSubtype.R
 
 #### Volcano plots showing DEG between OrganEx and 0h WIT, 1h WIT, 7h WIT and ECMO
 volcano.plot.R
